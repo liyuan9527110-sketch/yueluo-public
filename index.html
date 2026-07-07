@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>阅络 - 中文小说人物关系分析工具</title>
+    <meta name="description" content="阅络是一款本地运行的中文小说人物关系分析工具，支持章节解析、关系图浏览、阅读进度回溯和 Windows 内测版下载。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yueluo.net.cn/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="阅络">
+    <meta property="og:title" content="阅络 - 中文小说人物关系分析工具">
+    <meta property="og:description" content="本地运行的中文小说人物关系分析工具，面向长篇阅读、角色关系梳理和章节进度回溯。">
+    <meta property="og:url" content="https://yueluo.net.cn/">
+    <meta property="og:image" content="https://yueluo.net.cn/assets/yueluo-product-preview.png">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "阅络",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Windows",
+        "description": "本地运行的中文小说人物关系分析工具，支持关系图浏览、章节进度回溯和离线下载。",
+        "url": "https://yueluo.net.cn/",
+        "downloadUrl": "https://github.com/liyuan9527110-sketch/yueluo-public/releases/latest/download/Yueluo-latest-win-x64.zip"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="阅络首页">
+        <span class="brand-mark" aria-hidden="true">阅</span>
+        <span>阅络</span>
+      </a>
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="#features">功能</a>
+        <a href="#privacy">隐私</a>
+        <a href="#download">下载</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>阅络</h1>
+          <p class="hero-lede">中文小说人物关系分析工具</p>
+          <p class="hero-text">导入长篇文本后，阅络会按章节整理人物、组织、关系、事件和证据，让阅读进度中的人物网络更容易回看、筛选和修正。</p>
+          <div class="hero-actions" aria-label="下载与说明">
+            <a class="button button-primary" href="https://github.com/liyuan9527110-sketch/yueluo-public/releases/latest/download/Yueluo-latest-win-x64.zip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+              下载 Windows 内测版
+            </a>
+            <a class="button button-secondary" href="#local-run">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM9 9h6M9 13h6M9 17h3"/></svg>
+              查看本地运行说明
+            </a>
+          </div>
+        </div>
+        <figure class="product-frame">
+          <img src="assets/yueluo-product-preview.png" alt="阅络关系图界面预览，展示人物节点、关系线和右侧证据面板">
+          <figcaption>示例界面使用虚构数据展示，不包含公开数据库或个人文本。</figcaption>
+        </figure>
+      </section>
+
+      <section id="features" class="section section-dark">
+        <div class="section-heading">
+          <h2>把长篇关系整理成可回溯的图</h2>
+          <p>阅络优先服务中文小说阅读场景，关注章节进度、关系变化和原文证据，而不是把文本上传成在线资料库。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>关系图浏览</h3>
+            <p>按人物、组织和关系类型筛选网络，保留合作、竞争、亲属、敌对等类别的方向和颜色。</p>
+          </article>
+          <article class="feature-card">
+            <h3>章节进度回溯</h3>
+            <p>切换已读章节范围，查看某一阅读阶段已经出现的人物关系，减少后文信息提前剧透。</p>
+          </article>
+          <article class="feature-card">
+            <h3>证据与人工修正</h3>
+            <p>每条关系保留出处和说明，并支持在本机继续修正人物、别名、关系类别和重要度。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="privacy" class="section split-section">
+        <div>
+          <h2>本地数据与隐私</h2>
+          <p>第一版公开网站只提供介绍和下载。分析工具仍在用户自己的电脑上运行，文本、章节、关系和人工修正保存在本机运行数据目录中。</p>
+        </div>
+        <ul class="privacy-list">
+          <li>官网不连接生产数据库。</li>
+          <li>官网不提供导入、分析或编辑入口。</li>
+          <li>下载包不包含私有文本、密钥或开发目录。</li>
+        </ul>
+      </section>
+
+      <section id="download" class="section download-panel">
+        <div>
+          <h2>离线下载包</h2>
+          <p>Windows 内测版是独立压缩包。下载后解压，按包内说明启动，本地程序会在浏览器中打开关系图界面。</p>
+        </div>
+        <a class="button button-primary" href="https://github.com/liyuan9527110-sketch/yueluo-public/releases/latest/download/Yueluo-latest-win-x64.zip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+          下载 Windows 内测版
+        </a>
+      </section>
+
+      <section id="local-run" class="section section-light">
+        <h2>本地运行说明</h2>
+        <div class="steps">
+          <article>
+            <strong>1</strong>
+            <p>下载压缩包后完整解压，不要只拖出单个可执行文件。</p>
+          </article>
+          <article>
+            <strong>2</strong>
+            <p>双击包内启动入口，等待健康检查通过后自动打开浏览器。</p>
+          </article>
+          <article>
+            <strong>3</strong>
+            <p>如需分析新文本，在本地程序设置中配置模型密钥；官网不会接收或保存这些信息。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>阅络</span>
+      <span>本地优先的中文小说人物关系分析工具</span>
+    </footer>
+  </body>
+</html>

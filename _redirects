@@ -1,0 +1,4 @@
+/api/* /404.html 404
+/downloads/Yueluo-latest-win-x64.zip https://github.com/liyuan9527110-sketch/yueluo-public/releases/latest/download/Yueluo-latest-win-x64.zip 302
+/downloads/* /404.html 404
+/* /index.html 200
