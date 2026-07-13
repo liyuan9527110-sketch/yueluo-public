@@ -1,4 +1,3 @@
 /api/* /404.html 404
-/downloads/阅络-latest.zip https://github.com/liyuan9527110-sketch/yueluo-public/releases/latest/download/阅络-latest.zip 302
 /downloads/* /404.html 404
 /* /index.html 200
