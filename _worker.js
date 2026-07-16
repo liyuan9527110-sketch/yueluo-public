@@ -3,6 +3,33 @@ const RELEASE_ASSET = 'Yueluo-latest.zip'
 const DOWNLOAD_PATH = '/downloads/阅络-latest.zip'
 const VERSION_PATTERN = /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z]+(?:\.[0-9A-Za-z]+)*)?$/
 
+function staticCacheControl(pathname) {
+  if (pathname === '/' || pathname.endsWith('.html')) {
+    return 'public, max-age=0, must-revalidate'
+  }
+  if (pathname === '/styles.css') {
+    return 'public, max-age=0, must-revalidate'
+  }
+  if (pathname.startsWith('/assets/')) {
+    return 'public, max-age=86400, must-revalidate'
+  }
+  return null
+}
+
+async function serveStatic(request, env, pathname) {
+  const response = await env.ASSETS.fetch(request)
+  const cacheControl = staticCacheControl(pathname)
+  if (!cacheControl) return response
+
+  const headers = new Headers(response.headers)
+  headers.set('Cache-Control', cacheControl)
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  })
+}
+
 function upstreamHeaders() {
   return {
     Accept: 'application/vnd.github+json',
@@ -68,6 +95,6 @@ export default {
     if ((request.method === 'GET' || request.method === 'HEAD') && pathname === DOWNLOAD_PATH) {
       return downloadLatest(request)
     }
-    return env.ASSETS.fetch(request)
+    return serveStatic(request, env, pathname)
   },
 }
