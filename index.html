@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07111c">
     <title>阅络 - 中文小说人物关系分析工具</title>
-    <meta name="description" content="阅络是一款本地运行的中文小说人物关系分析工具，支持章节解析、关系图浏览、阅读进度回溯和 Windows 内测版下载。">
+    <meta name="description" content="阅络是一款本地运行的中文小说关系梳理工具，支持人物与组织关系图、章节进度筛选、原文证据回溯、人工修正和多套界面主题。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://yueluo.net.cn/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="阅络">
-    <meta property="og:title" content="阅络 - 中文小说人物关系分析工具">
-    <meta property="og:description" content="本地运行的中文小说人物关系分析工具，面向长篇阅读、角色关系梳理和章节进度回溯。">
+    <meta property="og:title" content="阅络 - 把长篇小说读成清晰的故事地图">
+    <meta property="og:description" content="人物、组织、关系与原文证据，随着阅读进度层层展开。">
     <meta property="og:url" content="https://yueluo.net.cn/">
     <meta property="og:image" content="https://yueluo.net.cn/assets/yueluo-product-preview.png">
     <link rel="stylesheet" href="styles.css">
@@ -21,7 +22,7 @@
         "name": "阅络",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "Windows",
-        "description": "本地运行的中文小说人物关系分析工具，支持关系图浏览、章节进度回溯和离线下载。",
+        "description": "本地运行的中文小说人物关系梳理工具，支持关系图浏览、章节进度回溯、原文证据和界面主题。",
         "url": "https://yueluo.net.cn/",
         "downloadUrl": "https://yueluo.net.cn/downloads/阅络-latest.zip"
       }
@@ -30,104 +31,169 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="阅络首页">
-        <span class="brand-mark" aria-hidden="true">阅</span>
-        <span>阅络</span>
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">阅络</span>
       </a>
       <nav class="site-nav" aria-label="主要导航">
-        <a href="#features">功能</a>
-        <a href="#privacy">隐私</a>
+        <a href="#capabilities">产品能力</a>
+        <a href="#privacy">本地数据与隐私</a>
         <a href="#download">下载</a>
       </nav>
+      <a class="header-download" href="https://yueluo.net.cn/downloads/阅络-latest.zip">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.2 10.4 4v7.4H4V5.2Zm7.5-1.4L20 2.2v9.2h-8.5V3.8ZM4 12.5h6.4V20L4 18.8v-6.3Zm7.5 0H20v9.3l-8.5-1.6v-7.7Z"/></svg>
+        下载 Windows 版
+      </a>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <h1>阅络</h1>
-          <p class="hero-lede">中文小说人物关系分析工具</p>
-          <p class="hero-text">导入长篇文本后，阅络会按章节整理人物、组织、关系、事件和证据，让阅读进度中的人物网络更容易回看、筛选和修正。</p>
-          <div class="hero-actions" aria-label="下载与说明">
-            <a class="button button-primary" href="/downloads/阅络-latest.zip">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
-              下载 Windows 内测版
-            </a>
-            <a class="button button-secondary" href="#local-run">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM9 9h6M9 13h6M9 17h3"/></svg>
-              查看本地运行说明
-            </a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>把一部长篇，<br>读成一张清晰的故事地图</h1>
+            <p>人物、组织、关系与原文证据，随着阅读进度层层展开。阅络在本机整理复杂故事，让你随时看懂、回溯和修正。</p>
+            <div class="hero-actions" aria-label="下载与产品介绍">
+              <a class="button button-primary" href="https://yueluo.net.cn/downloads/阅络-latest.zip">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+                下载 Windows 内测版
+              </a>
+              <a class="button button-secondary" href="#download">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 8 6-8 6V6Z"/></svg>
+                查看本地运行说明
+              </a>
+            </div>
           </div>
-        </div>
-        <figure class="product-frame">
-          <img src="assets/yueluo-product-preview.png" alt="阅络关系图界面预览，展示人物节点、关系线和右侧证据面板">
-          <figcaption>示例界面使用虚构数据展示，不包含公开数据库或个人文本。</figcaption>
-        </figure>
-      </section>
 
-      <section id="features" class="section section-dark">
-        <div class="section-heading">
-          <h2>把长篇关系整理成可回溯的图</h2>
-          <p>阅络优先服务中文小说阅读场景，关注章节进度、关系变化和原文证据，而不是把文本上传成在线资料库。</p>
+          <figure class="product-stage">
+            <span class="stage-line stage-line-one" aria-hidden="true"></span>
+            <span class="stage-line stage-line-two" aria-hidden="true"></span>
+            <img src="assets/yueluo-product-preview.png" alt="阅络关系图界面预览，展示人物节点、关系线和右侧原文证据面板">
+            <figcaption>示例界面使用虚构数据展示，不包含公开数据库或个人文本。</figcaption>
+          </figure>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>关系图浏览</h3>
-            <p>按人物、组织和关系类型筛选网络，保留合作、竞争、亲属、敌对等类别的方向和颜色。</p>
-          </article>
-          <article class="feature-card">
-            <h3>章节进度回溯</h3>
-            <p>切换已读章节范围，查看某一阅读阶段已经出现的人物关系，减少后文信息提前剧透。</p>
-          </article>
-          <article class="feature-card">
-            <h3>证据与人工修正</h3>
-            <p>每条关系保留出处和说明，并支持在本机继续修正人物、别名、关系类别和重要度。</p>
-          </article>
+        <div class="story-rail" aria-hidden="true">
+          <span>林舟</span><i></i><span>苏晚</span><i></i><span>星火社</span><i></i><span>周衡</span>
         </div>
       </section>
 
-      <section id="privacy" class="section split-section">
-        <div>
-          <h2>本地数据与隐私</h2>
-          <p>第一版公开网站只提供介绍和下载。分析工具仍在用户自己的电脑上运行，文本、章节、关系和人工修正保存在本机运行数据目录中。</p>
+      <section id="capabilities" class="section capability-section">
+        <div class="section-heading centered">
+          <h2>不是一张静态关系图</h2>
+          <p>它会跟着你的阅读范围改变，也允许你把理解修正得越来越准确。</p>
         </div>
-        <ul class="privacy-list">
-          <li>官网不连接生产数据库。</li>
-          <li>官网不提供导入、分析或编辑入口。</li>
-          <li>下载包不包含私有文本、密钥或开发目录。</li>
-        </ul>
+        <div class="capability-columns">
+          <article>
+            <div class="line-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="15" cy="16" r="6"/><circle cx="34" cy="14" r="5"/><circle cx="27" cy="34" r="6"/><path d="m20 18 9-2m-11 4 6 9m7-11-2 10"/></svg>
+            </div>
+            <div>
+              <h3>人物关系</h3>
+              <ul>
+                <li>查看人物与组织之间的关系网络</li>
+                <li>按合作、帮助、亲属、竞争等类别筛选</li>
+                <li>点击任意关系，定位认识方式与关键事件</li>
+                <li>手动修正别名、人物与关系判断</li>
+              </ul>
+            </div>
+          </article>
+          <article>
+            <div class="line-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M8 10h12c4 0 7 3 7 7v22c0-4-3-7-7-7H8V10Zm32 0H28v29c0-4 3-7 7-7h5V10Z"/><path d="M13 17h8m-8 6h8m12-6h3m-3 6h3"/></svg>
+            </div>
+            <div>
+              <h3>阅读脉络</h3>
+              <ul>
+                <li>按章节进度展开已经出现的关系</li>
+                <li>只看你读到的那一段，减少后文干扰</li>
+                <li>回到任意节点，快速回溯与对照</li>
+                <li>让故事地图随着理解持续生长</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="download" class="section download-panel">
-        <div>
-          <h2>离线下载包</h2>
-          <p>Windows 内测版是独立压缩包。下载后解压，按包内说明启动，本地程序会在浏览器中打开关系图界面。</p>
+      <section class="section evidence-section">
+        <div class="section-heading centered">
+          <h2>每条关系，都能回到原文</h2>
+          <p>不只给出结论，也保留认识方式、关键事件、关系变化与章节出处。</p>
         </div>
-        <a class="button button-primary" href="/downloads/阅络-latest.zip">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+        <div class="evidence-layout">
+          <article class="reading-note">
+            <div class="note-item">
+              <span>认识方式</span>
+              <p>通过星火社活动相识，因共同目标而合作。</p>
+            </div>
+            <div class="note-item">
+              <span>关键事件</span>
+              <p>共同调查雾港码头事件，建立信任并形成稳定合作。</p>
+            </div>
+            <div class="relation-scale" aria-label="关系从陌生发展为合作">
+              <span>陌生</span><i></i><b>合作</b><i></i><span>对立</span>
+            </div>
+            <blockquote>“林舟把调查记录推过去，苏晚接过来看了一眼，点点头：我们分头去码头，晚上在星火社碰头。”</blockquote>
+            <cite>— 第 7 章 雾头迷雾</cite>
+          </article>
+          <article class="timeline-panel">
+            <header><span>关系脉络</span><small>示例</small></header>
+            <ol>
+              <li><i></i><div><strong>第 1 章　码头迷雾</strong><p>林舟与苏晚在星火社活动相识。</p></div></li>
+              <li><i></i><div><strong>第 6 章　雾城来客</strong><p>共同调查失踪案，建立合作。</p></div></li>
+              <li><i></i><div><strong>第 12 章　暗潮初现</strong><p>意见出现分歧，关系出现波动。</p></div></li>
+              <li><i></i><div><strong>第 18 章　漩涡中心</strong><p>再次携手推进调查，合作稳固。</p></div></li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section theme-section">
+        <div class="section-heading centered">
+          <h2>换一种心情，看同一个故事</h2>
+          <p>在阅络设置中选择主题，界面会即时切换并在下次打开时自动恢复。</p>
+        </div>
+        <div class="theme-showcase" aria-label="阅络界面主题预览">
+          <article class="theme-card theme-ink"><div class="mini-shell"><span></span><i></i><b></b><em></em></div><h3>墨夜</h3></article>
+          <article class="theme-card theme-cute"><div class="mini-shell"><span></span><i></i><b></b><em></em></div><h3>软萌</h3></article>
+          <article class="theme-card theme-cyber"><div class="mini-shell"><span></span><i></i><b></b><em></em></div><h3>赛博朋克</h3></article>
+          <article class="theme-card theme-pastoral"><div class="mini-shell"><span></span><i></i><b></b><em></em></div><h3>田园</h3></article>
+          <article class="theme-card theme-minimal"><div class="mini-shell"><span></span><i></i><b></b><em></em></div><h3>极简白</h3></article>
+        </div>
+      </section>
+
+      <section id="privacy" class="section privacy-section">
+        <div class="section-heading centered">
+          <h2>你的故事，只留在你的电脑</h2>
+          <p>官网只负责介绍和下载，小说文本与分析数据不经过官网。</p>
+        </div>
+        <div class="privacy-rail">
+          <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 10h30v23H9zM15 38h18M24 33v5"/><path d="M18 19h12v8H18z"/></svg><div><h3>文本保存在本机</h3><p>导入内容与分析结果留在你的设备。</p></div></article>
+          <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11l15-6Z"/><path d="m17 24 5 5 10-11"/></svg><div><h3>官网不连接生产数据库</h3><p>首页不提供导入、分析或编辑入口。</p></div></article>
+          <article><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="20" r="10"/><path d="m27 27 13 13m-5-5 4-4m-9 0 4-4"/></svg><div><h3>密钥由本地设置管理</h3><p>配置保存在本机凭据管理器中。</p></div></article>
+        </div>
+      </section>
+
+      <section id="download" class="section download-section download-panel">
+        <div class="section-heading centered">
+          <h2>三步开始梳理</h2>
+          <p>无需复杂安装流程，完整解压后即可在本机运行。</p>
+        </div>
+        <ol class="steps">
+          <li><strong>1</strong><div><span>下载并完整解压</span><p>不要只拖出单个可执行文件。</p></div></li>
+          <li><strong>2</strong><div><span>启动阅络</span><p>等待检查通过后自动打开界面。</p></div></li>
+          <li><strong>3</strong><div><span>导入文本并开始分析</span><p>阅读关系、证据与章节变化。</p></div></li>
+        </ol>
+        <a class="button button-primary final-download" href="https://yueluo.net.cn/downloads/阅络-latest.zip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.2 10.4 4v7.4H4V5.2Zm7.5-1.4L20 2.2v9.2h-8.5V3.8ZM4 12.5h6.4V20L4 18.8v-6.3Zm7.5 0H20v9.3l-8.5-1.6v-7.7Z"/></svg>
           下载 Windows 内测版
         </a>
-      </section>
-
-      <section id="local-run" class="section section-light">
-        <h2>本地运行说明</h2>
-        <div class="steps">
-          <article>
-            <strong>1</strong>
-            <p>下载压缩包后完整解压，不要只拖出单个可执行文件。</p>
-          </article>
-          <article>
-            <strong>2</strong>
-            <p>双击包内启动入口，等待健康检查通过后自动打开浏览器。</p>
-          </article>
-          <article>
-            <strong>3</strong>
-            <p>如需分析新文本，在本地程序设置中配置模型密钥；官网不会接收或保存这些信息。</p>
-          </article>
-        </div>
+        <p class="download-note">本地运行 · 数据自持 · 当前为 Windows 内测版本</p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>阅络</span>
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">阅络</span>
+      </a>
       <span>本地优先的中文小说人物关系分析工具</span>
     </footer>
   </body>
