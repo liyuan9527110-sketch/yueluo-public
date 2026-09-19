@@ -66,10 +66,11 @@ async function downloadLatest(request, installer = false) {
     if (!asset) return unavailable()
 
     const assetResponse = await fetch(asset.browser_download_url, {
+      method: request.method,
       headers: { 'User-Agent': 'yueluo-download-worker' },
       redirect: 'follow',
     })
-    if (!assetResponse.ok || !assetResponse.body) return unavailable()
+    if (!assetResponse.ok || (request.method !== 'HEAD' && !assetResponse.body)) return unavailable()
 
     const version = tag.startsWith('v') ? tag.slice(1) : tag
     const asciiName = installer ? `YueluoSetup-v${version}.exe` : `Yueluo-v${version}.zip`
