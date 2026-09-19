@@ -1,6 +1,7 @@
 const RELEASE_API = 'https://api.github.com/repos/liyuan9527110-sketch/yueluo-public/releases/latest'
 const RELEASE_ASSET = 'Yueluo-latest.zip'
 const DOWNLOAD_PATH = '/downloads/阅络-latest.zip'
+const SETUP_PATH = '/downloads/阅络安装程序.exe'
 const VERSION_PATTERN = /^v?[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z]+(?:\.[0-9A-Za-z]+)*)?$/
 
 function staticCacheControl(pathname) {
@@ -48,7 +49,7 @@ function unavailable() {
   })
 }
 
-async function downloadLatest(request) {
+async function downloadLatest(request, installer = false) {
   try {
     const releaseResponse = await fetch(RELEASE_API, {
       headers: upstreamHeaders(),
@@ -60,7 +61,7 @@ async function downloadLatest(request) {
     const tag = typeof release.tag_name === 'string' ? release.tag_name : ''
     if (!VERSION_PATTERN.test(tag)) return unavailable()
     const asset = Array.isArray(release.assets)
-      ? release.assets.find((item) => item?.name === RELEASE_ASSET && typeof item?.browser_download_url === 'string')
+      ? release.assets.find((item) => item?.name === (installer ? 'YueluoSetup-latest.exe' : RELEASE_ASSET) && typeof item?.browser_download_url === 'string')
       : undefined
     if (!asset) return unavailable()
 
@@ -71,10 +72,10 @@ async function downloadLatest(request) {
     if (!assetResponse.ok || !assetResponse.body) return unavailable()
 
     const version = tag.startsWith('v') ? tag.slice(1) : tag
-    const asciiName = `Yueluo-v${version}.zip`
-    const chineseName = `阅络-v${version}.zip`
+    const asciiName = installer ? `YueluoSetup-v${version}.exe` : `Yueluo-v${version}.zip`
+    const chineseName = installer ? `阅络安装程序-v${version}.exe` : `阅络-v${version}.zip`
     const headers = new Headers(assetResponse.headers)
-    headers.set('Content-Type', 'application/zip')
+    headers.set('Content-Type', installer ? 'application/octet-stream' : 'application/zip')
     headers.set('Content-Disposition', `attachment; filename="${asciiName}"; filename*=UTF-8''${encodeURIComponent(chineseName)}`)
     headers.set('Cache-Control', 'public, max-age=300, must-revalidate')
     headers.set('X-Content-Type-Options', 'nosniff')
@@ -92,6 +93,9 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
     const pathname = decodeURIComponent(url.pathname)
+    if ((request.method === 'GET' || request.method === 'HEAD') && pathname === SETUP_PATH) {
+      return downloadLatest(request, true)
+    }
     if ((request.method === 'GET' || request.method === 'HEAD') && pathname === DOWNLOAD_PATH) {
       return downloadLatest(request)
     }

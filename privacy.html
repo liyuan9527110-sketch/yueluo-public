@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07111c">
+    <title>隐私政策 - 阅络</title>
+    <meta name="description" content="阅络 Windows 应用和浏览器扩展的隐私政策，包括本地数据、DeepSeek 分析与数据删除说明。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yueluo.net.cn/privacy.html">
+    <link rel="stylesheet" href="/styles.css?v=20260920-1">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="返回阅络首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">阅络</span>
+      </a>
+      <nav class="site-nav" aria-label="隐私政策导航">
+        <a href="#collection">收集与传输</a>
+        <a href="#storage">保存与删除</a>
+        <a href="#extension">浏览器扩展</a>
+      </nav>
+      <a class="header-download" href="/">返回官网</a>
+    </header>
+
+    <main class="legal-page">
+      <header class="legal-hero">
+        <p class="legal-kicker">阅络隐私政策</p>
+        <h1>你的小说与分析结果由你掌握</h1>
+        <p>生效日期：2026 年 9 月 20 日</p>
+      </header>
+
+      <article class="legal-content">
+        <section>
+          <h2>适用范围</h2>
+          <p>本政策适用于阅络 Windows 应用、阅络浏览器扩展和 yueluo.net.cn 官网。阅络用于导入小说正文、整理人物与组织关系，并保留可回溯的原文证据。</p>
+        </section>
+
+        <section id="collection">
+          <h2>收集与传输</h2>
+          <p>Windows 应用将导入的小说、章节、人物关系、分析结果、任务状态和应用设置保存在你的电脑上。阅络官网不接收这些内容，开发者没有为阅络运行用于存储小说或分析结果的云端数据库。</p>
+          <p>当你主动点击开始分析时，应用会把所选章节正文和必要的分析提示直接发送到你配置的 DeepSeek API。该请求受 DeepSeek 的服务条款和隐私政策约束。导入、浏览已有结果和手动编辑不会调用 DeepSeek。</p>
+          <p>DeepSeek API Key 保存在 Windows 凭据管理器中，不写入阅络数据库。阅络不会把密钥发送给开发者。</p>
+        </section>
+
+        <section id="storage">
+          <h2>保存、升级与删除</h2>
+          <p>安装版默认把书籍、分析结果、备份和日志保存在当前 Windows 用户的本地应用数据目录。程序升级和卸载会保留这些数据，避免误删已有书籍。</p>
+          <p>你可以从系统托盘菜单打开数据目录并自行备份。需要彻底删除时，请先退出阅络，再删除该数据目录；也可以在应用中删除单个项目。旧版 ZIP 数据只有在你首次启动时明确选择迁移后才会复制，原文件不会被修改。</p>
+        </section>
+
+        <section id="extension">
+          <h2>浏览器扩展</h2>
+          <p>浏览器扩展只在你主动操作时读取番茄小说公开页面、目录和所选章节，并通过本机回环地址发送到正在运行的阅络。扩展不会读取浏览历史、下载记录、Cookie 或登录凭据，也不会把正文发送到开发者服务器。</p>
+          <p>扩展会在 Chrome 本地存储中保存来源书籍绑定、导入进度和本机配对凭据。阅络网页只能查询扩展是否已安装及其版本，不能借此读取正文、密钥或启动导入。</p>
+        </section>
+
+        <section>
+          <h2>官网与更新</h2>
+          <p>官网提供产品介绍和安装包下载。托管服务可能按其常规规则处理访问日志，例如 IP 地址、浏览器类型和请求时间。阅络不会使用官网进行广告画像。</p>
+          <p>功能或数据处理方式发生变化时，本页面会同步更新生效日期。隐私问题可通过阅络公开发布仓库的 Issue 联系开发者。</p>
+          <p><a href="https://github.com/liyuan9527110-sketch/yueluo-public/issues">前往公开发布仓库反馈 ↗</a></p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="/"><span class="brand-name">阅络</span></a>
+      <span>本地优先的中文小说人物关系分析工具</span>
+    </footer>
+  </body>
+</html>
