@@ -20,7 +20,7 @@
       .hero-grid, .product-stage { min-width: 0; max-width: 100%; }
       .product-stage img { width: 100%; height: auto; display: block; }
     </style>
-    <link rel="stylesheet" href="/styles.css?v=20260920-1">
+    <link rel="stylesheet" href="/styles.css?v=20260920-2">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -28,6 +28,7 @@
         "name": "阅络",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "Windows",
+        "softwareVersion": "0.4.2-alpha",
         "description": "本地运行的中文小说人物关系梳理工具，支持关系图浏览、章节进度回溯、原文证据和界面主题。",
         "url": "https://yueluo.net.cn/",
         "downloadUrl": "https://yueluo.net.cn/downloads/阅络安装程序.exe"
@@ -47,7 +48,7 @@
       </nav>
       <a class="header-download" href="https://yueluo.net.cn/downloads/阅络安装程序.exe">
         <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.2 10.4 4v7.4H4V5.2Zm7.5-1.4L20 2.2v9.2h-8.5V3.8ZM4 12.5h6.4V20L4 18.8v-6.3Zm7.5 0H20v9.3l-8.5-1.6v-7.7Z"/></svg>
-        下载 Windows 版
+        下载 <span data-latest-version>v0.4.2-alpha</span>
       </a>
     </header>
 
@@ -60,7 +61,7 @@
             <div class="hero-actions" aria-label="下载与产品介绍">
               <a class="button button-primary" href="https://yueluo.net.cn/downloads/阅络安装程序.exe">
                 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
-                下载 Windows 内测版
+                下载 Windows <span data-latest-version>v0.4.2-alpha</span>
               </a>
               <a class="button button-secondary" href="#download">
                 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 8 6-8 6V6Z"/></svg>
@@ -189,8 +190,9 @@
         </ol>
         <a class="button button-primary final-download" href="https://yueluo.net.cn/downloads/阅络安装程序.exe">
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.2 10.4 4v7.4H4V5.2Zm7.5-1.4L20 2.2v9.2h-8.5V3.8ZM4 12.5h6.4V20L4 18.8v-6.3Zm7.5 0H20v9.3l-8.5-1.6v-7.7Z"/></svg>
-          下载 Windows 内测版
+          下载 Windows <span data-latest-version>v0.4.2-alpha</span>
         </a>
+        <p class="download-version" aria-live="polite"><span aria-hidden="true"></span>当前安装版 <strong data-latest-version>v0.4.2-alpha</strong><small data-latest-size> · 约 24 MB</small></p>
         <p class="download-note"><a href="https://yueluo.net.cn/downloads/阅络-latest.zip">其他下载：免安装 ZIP</a></p>
         <p class="download-note">本地运行 · 数据自持 · 当前为 Windows 内测版本</p>
       </section>
@@ -203,5 +205,20 @@
       </a>
       <span>本地优先的中文小说人物关系分析工具 · <a href="/privacy.html">隐私政策</a></span>
     </footer>
+    <script>
+      (() => {
+        const installer = '/downloads/阅络安装程序.exe'
+        const versionPattern = /filename="YueluoSetup-v([0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z]+(?:\.[0-9A-Za-z]+)*)?)\.exe"/i
+        fetch(installer, { method: 'HEAD', cache: 'no-store' }).then((response) => {
+          if (!response.ok) throw new Error('latest installer unavailable')
+          const match = (response.headers.get('content-disposition') || '').match(versionPattern)
+          if (!match) throw new Error('latest version unavailable')
+          document.querySelectorAll('[data-latest-version]').forEach((element) => { element.textContent = `v${match[1]}` })
+          const bytes = Number(response.headers.get('content-length'))
+          const size = document.querySelector('[data-latest-size]')
+          if (size && Number.isFinite(bytes) && bytes > 0) size.textContent = ` · 约 ${Math.ceil(bytes / 1024 / 1024)} MB`
+        }).catch(() => { /* Keep the packaged release version visible. */ })
+      })()
+    </script>
   </body>
 </html>

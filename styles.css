@@ -181,6 +181,10 @@ svg { display: block; }
 .steps p { margin: 7px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .final-download { min-width: 310px; }
 .final-download svg { fill: currentColor; stroke: none; }
+.download-version { margin: 16px 0 0; display: flex; align-items: center; justify-content: center; gap: 6px; color: #c5d2dc; font-size: 12px; }
+.download-version > span { width: 7px; height: 7px; border-radius: 50%; background: #63c48c; box-shadow: 0 0 12px rgba(99,196,140,.55); }
+.download-version strong { color: white; font-size: 13px; }
+.download-version small { color: var(--subtle); font-size: 11px; }
 .download-note { margin: 14px 0 0; color: var(--subtle); font-size: 11px; }
 
 .site-footer { min-height: 92px; padding: 0 max(40px, calc((100vw - 1360px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--subtle); background: #02070c; border-top: 1px solid var(--line-cool); font-size: 12px; }
